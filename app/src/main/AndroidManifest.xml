@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <queries>
+        <!-- Browser -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
+        </intent>
+        <!-- Camera -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <!-- Gallery -->
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/launchericon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MusicAppHN"
+        tools:targetApi="31">
+        <activity
+            android:name=".Usuario.EditarPerfilActivity"
+            android:exported="true"
+            android:label="Editar perfil"
+            android:parentActivityName=".Usuario.PerfilActivity" />
+        <activity
+            android:name=".Usuario.PerfilActivity"
+            android:exported="true"
+            android:label="Mi perfil"
+            android:parentActivityName=".Inicio.DashboardActivity" />
+        <activity
+            android:name=".Grabadora.GrabacionesActivity"
+            android:exported="true"
+            android:label="Mis grabaciones"
+            android:parentActivityName=".Grabadora.GrabadoraActivity" />
+        <activity
+            android:name=".Grabadora.GrabadoraActivity"
+            android:exported="true"
+            android:label="Grabadora"
+            android:parentActivityName=".Inicio.DashboardActivity" />
+        <activity
+            android:name=".Solicitudes.CrearSolicitudActivity"
+            android:exported="true"
+            android:label="Crear solicitud"
+            android:parentActivityName=".Solicitudes.SolicitudesActivity" />
+        <activity
+            android:name=".Solicitudes.SolicitudesActivity"
+            android:exported="true"
+            android:label="Solicitudes"
+            android:parentActivityName=".Inicio.DashboardActivity" />
+        <activity
+            android:name=".Grupos.GrupoAudioActivity"
+            android:exported="true"
+            android:label="Audios"
+            android:parentActivityName=".Grupos.MisGruposFragments.MisGruposActivity" />
+        <activity
+            android:name=".Grupos.GrupoVideoActivity"
+            android:exported="true"
+            android:label="Videos"
+            android:parentActivityName=".Grupos.MisGruposFragments.MisGruposActivity" />
+        <activity
+            android:name=".Grupos.SubirVideoActivity"
+            android:exported="true"
+            android:label="Subir video"
+            android:parentActivityName=".Grupos.GrupoVideoActivity" />
+        <activity
+            android:name=".Grupos.SubirAudioActivity"
+            android:exported="true"
+            android:label="Subir audio"
+            android:parentActivityName=".Grupos.GrupoAudioActivity" />
+        <activity
+            android:name=".Grupos.CrearGrupoActivity"
+            android:exported="true"
+            android:label="Crear grupo"
+            android:parentActivityName=".Inicio.DashboardActivity" />
+        <activity
+            android:name=".Grupos.MisGruposFragments.MisGruposActivity"
+            android:exported="true"
+            android:label="Mis grupos"
+            android:parentActivityName=".Inicio.DashboardActivity" />
+        <activity
+            android:name=".Grupos.DescubrirFragments.DescubrirGruposActivity"
+            android:exported="true"
+            android:label="Descubrir grupos"
+            android:parentActivityName=".Inicio.DashboardActivity" />
+        <activity
+            android:name=".Registro.RegistroActivity"
+            android:exported="true"
+            android:label="Registrarme" />
+        <activity
+            android:name=".Inicio.DashboardActivity"
+            android:exported="true"
+            android:label="Music App HN" />
+        <activity
+            android:name=".Inicio.ExtravioCuentaActivity"
+            android:exported="true"
+            android:label="Cuenta extraviada" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
